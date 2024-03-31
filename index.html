@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Math Sprinter Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--class name is used for calling in css-->
+    <div class="game-container" >     
+        <div class="header">
+            <h1>Math Sprinter Game</h1>
+        </div>
+        <!-- Splash Game-->
+        <div class="card" id="splash-page">
+            <form id="start-form">
+                <div class="selection-container">
+                    <!--10 questions radio input-->
+                    <div class="radio-container">
+                        <label for="value-10">10 Questions</label>
+                        <input type="radio" name="questions" value="10" id="value-10" />
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="selection-container">
+                    <!--25questions radio input-->
+                    <div class="radio-container">
+                        <label for="value-25">25 Questions</label>
+                        <input type="radio" name="questions" value="25" id="value-25" />
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="selection-container">
+                    <!--50 questions radio input-->
+                    <div class="radio-container">
+                        <label for="value-50">50 Questions</label>
+                        <input type="radio" name="questions" value="50" id="value-50" />
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="selection-container">
+                    <!--100 questions radio input selected label withradio container class-->
+                    <div class="radio-container">
+                        <label for="value-100">100 Questions</label>
+                        <input type="radio" name="questions" value="100" id="value-100" />
+                        <span class="best-score">
+                            <span>Best Score</span>
+                            <span class="best-score-value"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="selection-footer">
+                    <button class="start" type="submit">Lets Start!!</button>
+                </div>
+            </form>
+        </div>
+
+        <!--Countdown page-->
+        <div class="card" id="countdown-page" hidden>
+            <h1 class="countdown">3</h1>
+        </div>
+        <!--Game page-->
+        <div class="card" id="game-page" hidden>
+            <div class="item-container">        
+            </div>
+            <!-- correct and mistake button-->
+            <div class="item-footer" >
+                <button class="Mistake"onclick="select(false)">Mistake</button>
+                <button class="Correct"onclick="select (true)">Correct</button>
+            </div>
+        </div>
+        <!--Score page-->
+        <div class="card" id="score-page" hidden>
+            <!-- Score container-->
+            <div class="score-container">
+                <h1 class="title">Your Time!!</h1>
+                <h1 class="final-time"></h1>
+                <h1 class="base-time"></h1>
+                <h1 class="penalty-time"></h1>
+            </div>
+            <!-- Play Again button-->
+            <div class="score-footer">
+                <button class="play" onclick ="playAgain()" hidden>Play Again!!</button>
+            </div>
+        </div>
+    </div>
+    <script src="shuffle.js"></script>
+    <script  src="Script1.js"></script>
+    
+</body>
+</html>

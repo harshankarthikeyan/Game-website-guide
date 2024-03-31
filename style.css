@@ -1,0 +1,238 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    box-sizing:border-box;
+    
+}
+:root {/*root element is the denoted high priority element which contains variables*/
+    --primary-color:Darkblue;
+    --select-color:Darkblue;
+    --success:rgb(14,158,2);
+    --danger:rgb(214,23,23);
+}
+body {
+    margin: 0;
+    font-family: Bebas Neue,'Times New Roman',Algerian;
+    overflow: hidden;
+    /*here flex is used to display a content in rows or columns by justiy the contents to center it makes the content to the center of the page*/
+    display: flex;
+    justify-content:center;
+    height: 100vh;
+    background-color: whitesmoke;/*heros pattern website is used for well known background images*/
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='84' viewBox='0 0 126 84'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23eae4f3' fill-opacity='0.77'%3E%3Cpath d='M126 83v1H0v-2h40V42H0v-2h40V0h2v40h40V0h2v40h40V0h2v83zm-2-1V42H84v40h40zM82 42H42v40h40V42zm-50-6a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm96 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm-42 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm30-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM20 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 24a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM8 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM50 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm54-12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm12 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 54a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24 0a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM92 78a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm24-42a4 4 0 1 1 0-8 4 4 0 0 1 0 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.game-container{
+    border:1px solid black;
+    box-shadow:0 10px 20px -5px rgba(0,0,0,0.5);
+    width:530px;
+    height:600px;
+    position:relative;
+    background:rgb(255,255,255,0.5);
+    user-select :none;
+    margin-top:10px;
+    
+}
+/*header calss is used in div element to style particular container.
+*/
+.header{
+    background:var(--primary-color);
+    color:white;
+    font-size:24px;
+    text-shadow:1px 2px 2px black;
+    letter-spacing: 2px;
+    height:100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+/* card is the parent class of all the div  elements in the body .if we gives styles to the particular conatiner means we will make changes.*/
+.card {
+    margin: 5px auto 10px;
+    height:500px;
+}
+/* selection container used to make a relative position
+    relative position means in which its parent class's starting position
+*/
+.selection-container{
+    position:relative;
+    top:20px;
+}
+.radio-container{
+    width:90%;
+    height:75px;
+    margin:20px;
+    cursor:pointer;
+    border:2px solid black;
+    border-radius:5px;
+}
+/*label element used to style the button in  the html file*/
+label{
+    position:relative;
+    top:20px;
+    left:20px;
+    font-size:30px;
+
+}
+input[type="radio"] {
+    opacity: 0;
+    width: 100%;
+    height: 7%;
+    position: relative;
+    top: -40px;
+    cursor: pointer;
+    z-index: 2; /*which determinesthe postion of the button in the stack*/
+}
+.best-score{
+    position:relative;
+    top:-50px;
+    left:300px;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    font-size:18px;
+    max-width:fit-content;/*max width set the sixe of each column depending on the largest item in the column*/
+}
+.best-score{
+    margin:0;
+}
+.best-score span:last-child{
+    font-size: 40px;
+}
+.selected-label{
+    background:var(--select-color);
+    color:white;
+}.selection-footer {
+    width: 100%;
+    height: 75px;
+    top: 25px;
+    background: rgba(0,0,0,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    align-items: center;
+    position: relative;
+}
+.item-footer {
+    width: 100%;
+    height: 75px;
+    top: -80px;
+    background: rgba(0,0,0,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    align-items: center;
+    position: relative;
+}
+button {
+    cursor: pointer;
+    height: 45px;
+    border-bottom: 5px;
+    font-size: 25px;
+    color: white;
+    border: none;
+    outline: none;
+
+}
+
+.start{
+    width:90%;
+    background:var(--primary-color);
+}
+.play{
+   margin-top: 5rem;
+    width:100%;
+    background: var(--primary-color);
+    
+}
+button:active{
+    transform:scale(0.99);
+}
+/*countdown page design*/
+.countdown{
+    margin-top:50px;
+    font-size:250px;
+    user-select:none;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    
+}
+/*game page design*/
+.item-container{
+    height :550px;
+    position:relative;
+    overflow-y:scroll;
+    -ms-overflow-style:none;
+}
+.item{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    height:80px;
+    margin:0.5px;
+    user-select:none;
+}
+.selected-item{
+    background-color:var(--select-color);
+    position:fixed;
+    top:200px;
+    width:525px;
+    height:80px;
+    z-index:-1;
+}
+.item-container::-webkit-scrollbar{
+    display:none;
+}
+item-footer{
+    top:1px;
+}
+.Mistake,.Correct{
+    width:40%;
+}
+.Mistake{
+    background:var(--danger);
+    margin-right:25px;
+}
+.Correct{ 
+    background:var(--success);
+}
+/*score page*/
+.score-container{
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.title{
+    font-size:45px;
+}
+.final-time {
+    font-size: 100px;
+    margin: 0;
+    color: var(--success)
+}
+.base-time{
+    margin-top:50px;
+    margin-bottom:0;
+}
+.penalty-time{
+    color:var(--danger)
+}
+.score-footer{
+    width:100%;
+    height:90px;
+    top:-30px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+.height-240{
+    height: 100px;
+    width:100%;
+}
+.height-500{
+    height: 500px;
+    width: 100%;
+}
